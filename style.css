@@ -3,6 +3,9 @@
 body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.189);
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/25/minimalist-futurama.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,13 +28,13 @@ body {
 }
 
 div.card {
-    width: 250px;
+    width: 225px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 249, 87, 0.209);
+    background-color: rgba(247, 247, 247, 0.757);
     border-radius: 20px;
     box-shadow: 0 0 5px;
     text-align: center;
@@ -43,7 +46,7 @@ div.card {
 
 div.card:hover {
 
-        box-shadow: inset 0 0 5px rgba(1, 71, 1, 0.813);
+        box-shadow: inset 0 0 10px rgba(170, 2, 2, 0.813);
         animation-name: initial;
         transition: 5s;
 }
@@ -78,7 +81,8 @@ h1 {
 h1.title {
     text-align: center;
     font-size: 50px;
-    padding: 20px;
+    padding: 40px;
+    color: white;
 }
 
 div.bubble {
