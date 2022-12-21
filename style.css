@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.189);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    font-family: 'Lobster', cursive, Arial, Helvetica, sans-serif;
+}
+
+
+.album {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+div.card {
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 249, 87, 0.209);
+    border-radius: 20px;
+    box-shadow: 0 0 5px;
+    text-align: center;
+    padding: 5px;
+    margin: 8px;
+    gap: 3px;
+    position: relative;
+}
+
+div.card:hover {
+
+        box-shadow: inset 0 0 5px rgba(1, 71, 1, 0.813);
+        animation-name: initial;
+        transition: 5s;
+}
+
+div.image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin: 5px 0 5px 0;
+}
+
+h2 {
+    font-size: 80%;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+p {
+    margin: 0;
+    font-size: 80%;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1.title {
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+
+div.bubble {
+    width: 150px;
+    height: 140px;
+    position: absolute;
+    top: -25px;
+    right: -60px;
+    background-image: url("https://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-Chat-Bubble-PNG-Transparent-Image.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
+    z-index:100;
+}
+
+p.bubble {
+    width: 80%;
+    height: fit-content;
+    text-align: center;
+    margin-top: -30px;
+}
+
+.hide {
+    opacity: 0;
+}
