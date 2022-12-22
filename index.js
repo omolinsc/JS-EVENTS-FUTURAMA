@@ -131,64 +131,37 @@ for (let i = 0; i < futurama.length ; i++) {
 
   chatText$$.textContent = futurama[i].quote;
   
-  chatBubble$$.appendChild(chatText$$);
+  //* insertamos BUBBLE y BUBBLETEXT a cada carta
   card$$.appendChild(chatBubble$$);
+  chatBubble$$.appendChild(chatText$$);
 
 };
 
-//* seleccionamos las classes con bubble y le añadimos la HIDE
-
 const cardsSelect$$ = document.querySelectorAll(".card");
+// console.log(cardsSelect$$);
 
-const showHide = function () {
-    document.querySelector(".hide").classList.remove("hide");
+
+//! la idea de la función analice si está visible o invisible la burbuja (click=0 invisible, click=1 visible)
+
+//! si click está en 0, al clicar y lanzar la función del evento se elimina la clase HIDE para hacer visible BUBBLE y sumamos 1 a click para marcar que está visible
+
+//! si click está en 1 significará que  BUBBLE está visible y al ejecutar la función añadiremos la clase HIDE para hacer que BUBBLE vuelva a ser invisible
+
+let click = 0;
+const showHide = function (event){
+  const selected = document.querySelector("bubble hide");
+
+  if (click === 1){
+    selected.classList.add("hide");
+  } else {
+    selected.classList.remove("hide");
+    click = 1;  
+  }
+  console.log("hola, estoy en la carta", event);
+};
+
+//* añadimos un eventListener en cada carta con la condición "click"
+
+for (let i = 0; i < cardsSelect$$.length; i++){
+  cardsSelect$$[i].addEventListener("click", showHide);
 }
-
-cardsSelect$$.forEach(element => addEventListener("click", showHide));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const myTimeout = setTimeout(whenClick$$, 5000);
-
-// const cards$$ = document.querySelectorAll(".card");
-// console.log(cards$$);
-
-// for (const card of cards$$){
-
-//     card.addEventListener("click", whenClick$$);
-
-// }
-
-// function whenClick$$(event){
-//     console.log(event);
-//     // const chatBubble$$ = document.querySelector(".bubble");
-//     // chatBubble$$.classList.add("hide");
-// };
-
-// const eventChat$$ = document.querySelectorAll(".card");
-
-// for (const event of eventChat$$){
-//     event.addEventListener("click", whenClick$$);
-// };
-

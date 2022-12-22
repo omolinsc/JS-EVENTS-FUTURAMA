@@ -2,9 +2,11 @@
 
 body {
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.189);
     background-image: url("https://free4kwallpapers.com/uploads/originals/2015/09/25/minimalist-futurama.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -15,7 +17,6 @@ body {
     align-content: center;
     font-family: 'Lobster', cursive, Arial, Helvetica, sans-serif;
 }
-
 
 .album {
     width: 80%;
@@ -42,6 +43,7 @@ div.card {
     margin: 8px;
     gap: 3px;
     position: relative;
+    
 }
 
 div.card:hover {
@@ -81,8 +83,9 @@ h1 {
 h1.title {
     text-align: center;
     font-size: 50px;
-    padding: 40px;
+    padding: 40px 5px 40px 5px;
     color: white;
+    top: 0;
 }
 
 div.bubble {
