@@ -124,7 +124,7 @@ for (let i = 0; i < futurama.length ; i++) {
   const chatText$$ = document.createElement("p");
 
   //* Añado la classe BUBBLE y HIDE al BUBBLETEXT
-  chatBubble$$.setAttribute("class","bubbleBox");
+  chatBubble$$.setAttribute("class","bubbleBox hide");
   chatText$$.setAttribute("class","bubbleText");
 
   chatText$$.textContent = futurama[i].quote;
@@ -135,21 +135,17 @@ for (let i = 0; i < futurama.length ; i++) {
 
   //! intentando hacer que al clicar la carta enseñe o amague la BUBBLE
     function showHide(event) {
-      const selectedBubble$$ = document.querySelectorAll(".bubbleBox");
-      // const selectedCard$$ = event.target.getElementsByClassName(".card");
-      // const selectedBubble$$ = event.target.getElementsByClassName(".bubbleBox");
-      // console.log(selectedCard$$,selectedBubble$$);
-
-      // const finalBubble$$ = selectedBubble$$.querySelector(".bubbleBox");
-      // console.log(finalBubble$$);
+      const selectedBubble$$ = document.querySelectorAll(".card");
       
+      const test = event.composedPath()[2]; 
+      const test2= test.getElementsByClassName("bubbleBox")[0];
 
-      for (const bubble$$ of selectedBubble$$){
-        console.log(bubble$$);
-        bubble$$.setAttribute("style","opacity: 0");
+      if (test2.className == "bubbleBox"){
+        test2.setAttribute("class","bubbleBox hide");
+      } else {
+        test2.setAttribute("class","bubbleBox");
       }
 
-      selectedBubble$$.setAttribute("style","opacity: 0");
       
     };
 
@@ -160,28 +156,3 @@ for (let i = 0; i < futurama.length ; i++) {
 const cardsSelect$$ = document.querySelectorAll(".card");
 // console.log(cardsSelect$$);
 
-
-//! la idea de la función analice si está visible o invisible la burbuja (click=0 invisible, click=1 visible)
-
-//! si click está en 0, al clicar y lanzar la función del evento se elimina la clase HIDE para hacer visible BUBBLE y sumamos 1 a click para marcar que está visible
-
-//! si click está en 1 significará que  BUBBLE está visible y al ejecutar la función añadiremos la clase HIDE para hacer que BUBBLE vuelva a ser invisible
-
-// let click = 0;
-// const showHide = function (event){
-//   const selected = document.querySelector("bubble hide");
-
-//   if (click === 1){
-//     selected.classList.add("hide");
-//   } else {
-//     selected.classList.remove("hide");
-//     click = 1;  
-//   }
-//   console.log("hola, estoy en la carta", event);
-// };
-
-// //* añadimos un eventListener en cada carta con la condición "click"
-
-// for (let i = 0; i < cardsSelect$$.length; i++){
-//   cardsSelect$$[i].addEventListener("click", showHide);
-// }
