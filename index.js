@@ -8,7 +8,7 @@ const futurama = [
     isAlive: true,
     weight: 70,
     img: "https://upload.wikimedia.org/wikipedia/en/2/28/Philip_Fry.png",
-    quote: "Phillip J. Fry",
+    quote: "El espacio parece extenderse sin límites. Hasta que llegas al final y aparece un mono lanzándote barriles.",
     occupation: "Delivery Boy",
   },
   {
@@ -20,7 +20,7 @@ const futurama = [
     isAlive: true,
     weight: 58,
     img: "https://upload.wikimedia.org/wikipedia/en/d/d4/Turanga_Leela.png",
-    quote: "Turanga Leela",
+    quote: "Bueno, perdimos contra todos nuestros oponentes. Incluso ese equipo que resultó ser nosotros en el espejo",
     occupation: "Captain of the Planet Express Ship",
   },
   {
@@ -32,7 +32,7 @@ const futurama = [
     isAlive: true,
     weight: 62,
     img: "https://upload.wikimedia.org/wikipedia/en/0/0f/FuturamaProfessorFarnsworth.png",
-    quote: "Hubert J. Farnsworth",
+    quote: "¡Odio a estos nerds! ¡Solo porque soy más estúpido que ellos, piensan que son más listos que yo!",
     occupation: "CEO/Owner of Planet Express, Lecturer at Mars University",
   },
   {
@@ -44,7 +44,7 @@ const futurama = [
     isAlive: false,
     weight: 200,
     img: "https://i.pinimg.com/originals/5d/b2/63/5db263b183c85dbec594dfb5d66a8260.png",
-    quote: "Bender Doblador Rodríguez",
+    quote: "¡Voy a construir mi propio parque temático! Con Blackjack! ¡Y prostitutas!",
     occupation: "Assistant Manager of Sales & Chef at Planet Express",
   },
   {
@@ -56,7 +56,7 @@ const futurama = [
     isAlive: true,
     weight: 105,
     img: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Dr_John_Zoidberg.png/200px-Dr_John_Zoidberg.png",
-    quote: "John A. Zoidberg",
+    quote: "¡Ah, no hay nada como la primera taza de jugo de basura en la mañana!",
     occupation: "Staff doctor at the Planet Express delivery company",
   },
   {
@@ -68,7 +68,7 @@ const futurama = [
     isAlive: true,
     weight: 54,
     img: "https://static.simpsonswiki.com/images/thumb/a/a1/Amy_Wong.png/150px-Amy_Wong.png",
-    quote: "Amy Wong",
+    quote: "¡Guau! ¡Carrito deportivo, Leela! Tan moderno y sexy. No como tú en absoluto.",
     occupation: "Physicist intern to Professor Hubert J. Farnsworth",
   },
 ];
@@ -133,21 +133,36 @@ for (let i = 0; i < futurama.length ; i++) {
   card$$.appendChild(chatBubble$$);
   chatBubble$$.appendChild(chatText$$);
 
-  //! intentando hacer que al clicar la carta enseñe o amague la BUBBLE
-    function showHide(event) {
-      const selectedBubble$$ = document.querySelectorAll(".card");
-      
-      const test = event.composedPath()[2]; 
-      const test2= test.getElementsByClassName("bubbleBox")[0];
+  //* función que al clicar la carta enseñe BUBBLE y la amague en 5 segundos
+  function showHide(event) {
+    const selectedBubble$$ = document.querySelectorAll(".card");
+    
+    const test = event.composedPath()[2]; 
+    const test2= test.getElementsByClassName("bubbleBox hide")[0];
 
-      if (test2.className == "bubbleBox"){
+    if (test2.className == "bubbleBox hide"){
+      test2.setAttribute("class","bubbleBox");
+      setTimeout(() => {
         test2.setAttribute("class","bubbleBox hide");
-      } else {
-        test2.setAttribute("class","bubbleBox");
-      }
+      }, 7000);      
+    } 
+  };
+
+  //* función que al clicar la carta enseñe o amague la BUBBLE
+  //   function showHide(event) {
+  //     const selectedBubble$$ = document.querySelectorAll(".card");
+      
+  //     const test = event.composedPath()[2]; 
+  //     const test2= test.getElementsByClassName("bubbleBox")[0];
+
+  //     if (test2.className == "bubbleBox"){
+  //       test2.setAttribute("class","bubbleBox hide");
+  //     } else {
+  //       test2.setAttribute("class","bubbleBox");
+  //     }
 
       
-    };
+  //   };
 
   card$$.addEventListener("click", showHide);
 
