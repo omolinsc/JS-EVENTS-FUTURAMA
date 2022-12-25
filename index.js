@@ -124,16 +124,36 @@ for (let i = 0; i < futurama.length ; i++) {
   const chatText$$ = document.createElement("p");
 
   //* Añado la classe BUBBLE y HIDE al BUBBLETEXT
-  chatBubble$$.setAttribute("class","bubble");
-  chatText$$.setAttribute("class","bubble");
-  chatBubble$$.classList.add("hide");           
-  chatText$$.classList.add("hide");
+  chatBubble$$.setAttribute("class","bubbleBox");
+  chatText$$.setAttribute("class","bubbleText");
 
   chatText$$.textContent = futurama[i].quote;
   
   //* insertamos BUBBLE y BUBBLETEXT a cada carta
   card$$.appendChild(chatBubble$$);
   chatBubble$$.appendChild(chatText$$);
+
+  //! intentando hacer que al clicar la carta enseñe o amague la BUBBLE
+    function showHide(event) {
+      const selectedBubble$$ = document.querySelectorAll(".bubbleBox");
+      // const selectedCard$$ = event.target.getElementsByClassName(".card");
+      // const selectedBubble$$ = event.target.getElementsByClassName(".bubbleBox");
+      // console.log(selectedCard$$,selectedBubble$$);
+
+      // const finalBubble$$ = selectedBubble$$.querySelector(".bubbleBox");
+      // console.log(finalBubble$$);
+      
+
+      for (const bubble$$ of selectedBubble$$){
+        console.log(bubble$$);
+        bubble$$.setAttribute("style","opacity: 0");
+      }
+
+      selectedBubble$$.setAttribute("style","opacity: 0");
+      
+    };
+
+  card$$.addEventListener("click", showHide);
 
 };
 
@@ -147,21 +167,21 @@ const cardsSelect$$ = document.querySelectorAll(".card");
 
 //! si click está en 1 significará que  BUBBLE está visible y al ejecutar la función añadiremos la clase HIDE para hacer que BUBBLE vuelva a ser invisible
 
-let click = 0;
-const showHide = function (event){
-  const selected = document.querySelector("bubble hide");
+// let click = 0;
+// const showHide = function (event){
+//   const selected = document.querySelector("bubble hide");
 
-  if (click === 1){
-    selected.classList.add("hide");
-  } else {
-    selected.classList.remove("hide");
-    click = 1;  
-  }
-  console.log("hola, estoy en la carta", event);
-};
+//   if (click === 1){
+//     selected.classList.add("hide");
+//   } else {
+//     selected.classList.remove("hide");
+//     click = 1;  
+//   }
+//   console.log("hola, estoy en la carta", event);
+// };
 
-//* añadimos un eventListener en cada carta con la condición "click"
+// //* añadimos un eventListener en cada carta con la condición "click"
 
-for (let i = 0; i < cardsSelect$$.length; i++){
-  cardsSelect$$[i].addEventListener("click", showHide);
-}
+// for (let i = 0; i < cardsSelect$$.length; i++){
+//   cardsSelect$$[i].addEventListener("click", showHide);
+// }
