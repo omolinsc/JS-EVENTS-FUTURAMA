@@ -135,17 +135,18 @@ for (let i = 0; i < futurama.length ; i++) {
 
   //* función que al clicar la carta enseñe BUBBLE y la amague en 5 segundos
   function showHide(event) {
-    const selectedBubble$$ = document.querySelectorAll(".card");
     
-    const test = event.composedPath()[2]; 
-    const test2= test.getElementsByClassName("bubbleBox hide")[0];
+    //* buscamos la ruta al div en el que clicamos
+    const selectCard$$ = event.composedPath()[2]; 
+    //* buscamos la ruta del div que contiene BUBBLE
+    const selectedBubble$$= selectCard$$.getElementsByClassName("bubbleBox hide")[0];
 
-    if (test2.className == "bubbleBox hide"){
-      test2.setAttribute("class","bubbleBox");
+    if (selectedBubble$$.className == "bubbleBox hide"){
+      selectedBubble$$.setAttribute("class","bubbleBox");
       setTimeout(() => {
-        test2.setAttribute("class","bubbleBox hide");
+        selectedBubble$$.setAttribute("class","bubbleBox hide");
       }, 7000);      
-    } 
+    }
   };
 
   //* función que al clicar la carta enseñe o amague la BUBBLE
