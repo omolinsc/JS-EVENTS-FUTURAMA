@@ -145,25 +145,9 @@ for (let i = 0; i < futurama.length ; i++) {
       selectedBubble$$.setAttribute("class","bubbleBox");
       setTimeout(() => {
         selectedBubble$$.setAttribute("class","bubbleBox hide");
-      }, 7000);      
+      }, 4000);      
     }
   };
-
-  //* función que al clicar la carta enseñe o amague la BUBBLE
-  //   function showHide(event) {
-  //     const selectedBubble$$ = document.querySelectorAll(".card");
-      
-  //     const test = event.composedPath()[2]; 
-  //     const test2= test.getElementsByClassName("bubbleBox")[0];
-
-  //     if (test2.className == "bubbleBox"){
-  //       test2.setAttribute("class","bubbleBox hide");
-  //     } else {
-  //       test2.setAttribute("class","bubbleBox");
-  //     }
-
-      
-  //   };
 
   card$$.addEventListener("click", showHide);
 
